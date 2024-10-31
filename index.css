@@ -6,6 +6,7 @@
 }
 
 body {
+  font-family: "Raleway", sans-serif;
   background: url(img/overview-hero-west.jpg) no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
@@ -48,7 +49,7 @@ header nav ul a {
 
 header nav ul a:hover {
   transform: scale(1.2);
-  border-bottom: 3px solid blue;
+  border-bottom: 3px solid #3699e5;
 }
 
 .logo {
@@ -58,7 +59,7 @@ header nav ul a:hover {
 }
 
 .logo span {
-  color: blue;
+  color: #3699e5;
 }
 
 .content {
@@ -84,7 +85,7 @@ header nav ul a:hover {
 }
 
 .left-col span {
-  color: blue;
+  color: #3699e5;
 }
 
 .right-col {
@@ -94,9 +95,9 @@ header nav ul a:hover {
   justify-content: center;
   padding: 15px 30px;
   font-size: 24px;
-  color: blue;
+  color: #3699e5;
   font-weight: 600;
-  border: 2px solid blue;
+  border: 2px solid #3699e5;
   border-radius: 32px;
   position: absolute;
   top: 50%;
@@ -109,11 +110,35 @@ header nav ul a:hover {
   height: 24px;
   margin-left: 8px;
 }
+@keyframes bump {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.left-col h1 {
+  font-size: 80px;
+  color: black;
+  line-height: 1.1;
+  animation: bump 3s ease-in-out infinite;
+}
+
+.left-col span {
+  color: #3699e5;
+  display: inline-block;
+  animation: bump 20s ease-in-out infinite;
+}
+
 .right-col .play {
-  transition: 0.3 ease;
+  transition: 0.3s ease;
   max-width: 50px;
   cursor: pointer;
 }
+
 .right-col .play:hover {
   transform: scale(1.1);
 }
