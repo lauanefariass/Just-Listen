@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>MUSIC</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <a href="#" class="logo">DYSON <span>
+          MUSIC
+        </span> </a>
+      <nav>
+        <ul>
+          <li> <a href="#">MUSICS</a></li>
+          <li> <a href="#">HITS</a></li>
+          <li> <a href="#">PODCASTS</a></li>
+          <li> <a href="#">NEW RELEASE</a></li>
+          <li> <a href="#">YOUR LIBRARY</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="left-col">
+      <div style="display: flex; flex-direction: column;">
+
+        <h1>FEEL THE
+          <br><span class="MUSIC">MUSIC</span>
+        </h1>
+      </div>
+      <div class="right-col">
+        <p>Try your dyson zone </p>
+        <img src="./img/play.svg" class="play" id="icon">
+      </div>
+    </div>
+
+  </div>
+  <audio id="music">
+    <source src="./music/music.mp3" type="audio/mp3">
+  </audio>
+
+
+  <script>
+    let music = document.getElementById("music")
+    let icon = document.getElementById("icon")
+
+    icon.onclick = function () {
+      if (music.paused) {
+        music.play();
+        icon.src = "img/pause.svg"
+
+      } else {
+        music.pause();
+        icon.src = "img/play.svg"
+      }
+    };
+  </script>
+</body>
+
+</html>
