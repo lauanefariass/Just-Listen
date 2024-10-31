@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -82,10 +81,13 @@ header nav ul a:hover {
   font-size: 80px;
   color: black;
   line-height: 1.1;
+  animation: bump 3s ease-in-out infinite;
 }
 
 .left-col span {
   color: #3699e5;
+  display: inline-block;
+  animation: bump 20s ease-in-out infinite;
 }
 
 .right-col {
@@ -110,6 +112,7 @@ header nav ul a:hover {
   height: 24px;
   margin-left: 8px;
 }
+
 @keyframes bump {
   0%,
   100% {
@@ -118,19 +121,6 @@ header nav ul a:hover {
   50% {
     transform: scale(1.1);
   }
-}
-
-.left-col h1 {
-  font-size: 80px;
-  color: black;
-  line-height: 1.1;
-  animation: bump 3s ease-in-out infinite;
-}
-
-.left-col span {
-  color: #3699e5;
-  display: inline-block;
-  animation: bump 20s ease-in-out infinite;
 }
 
 .right-col .play {
@@ -146,4 +136,81 @@ header nav ul a:hover {
 .MUSIC {
   display: flex;
   margin-left: 50px;
+}
+
+@media (max-width: 1200px) {
+  header {
+    padding: 1em 2em;
+  }
+
+  .left-col {
+    margin-left: 2em;
+  }
+
+  .left-col h1 {
+    font-size: 60px;
+  }
+
+  .right-col {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .left-col {
+    margin-left: 1em;
+    margin-top: 30px;
+  }
+
+  .left-col h1 {
+    font-size: 50px;
+  }
+
+  .right-col {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background: url(img/overview-hero-small.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .left-col h1 {
+    font-size: 40px;
+  }
+
+  .right-col {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .left-col {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .MUSIC {
+    margin-left: 0;
+    justify-content: center;
+  }
 }
