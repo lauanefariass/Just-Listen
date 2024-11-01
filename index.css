@@ -31,6 +31,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
+}
+
+.logo img {
+  margin-top: 25px;
+  width: 300px;
+  height: auto;
 }
 
 header nav ul {
@@ -48,17 +55,7 @@ header nav ul a {
 
 header nav ul a:hover {
   transform: scale(1.2);
-  border-bottom: 3px solid #3699e5;
-}
-
-.logo {
-  text-decoration: none;
-  font-size: 40px;
-  color: black;
-}
-
-.logo span {
-  color: #3699e5;
+  border-bottom: 3px solid blue;
 }
 
 .content {
@@ -85,7 +82,7 @@ header nav ul a:hover {
 }
 
 .left-col span {
-  color: #3699e5;
+  color: blue;
   display: inline-block;
   animation: bump 20s ease-in-out infinite;
 }
@@ -97,9 +94,9 @@ header nav ul a:hover {
   justify-content: center;
   padding: 15px 30px;
   font-size: 24px;
-  color: #3699e5;
+  color: blue;
   font-weight: 600;
-  border: 2px solid #3699e5;
+  border: 2px solid blue;
   border-radius: 32px;
   position: absolute;
   top: 50%;

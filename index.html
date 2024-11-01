@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courgette&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-
   <title>MUSIC</title>
   <link rel="stylesheet" href="./index.css">
 </head>
@@ -17,7 +16,9 @@
 <body>
   <div class="wrapper">
     <header>
-      <a href="#" class="logo"> <img src="./img/dyson-zone.png" alt=""></a>
+      <a href="#" class="logo">
+        <img src="img/Dyson_logo-min.svg" alt="Logo">
+      </a>
       <nav>
         <ul>
           <li> <a href="#">MUSICS</a></li>
@@ -41,12 +42,10 @@
         <img src="./img/play.svg" class="play" id="icon">
       </div>
     </div>
-
   </div>
   <audio id="music">
     <source src="./music/music.mp3" type="audio/mp3">
   </audio>
-
 
   <script>
     let music = document.getElementById("music")
@@ -56,7 +55,6 @@
       if (music.paused) {
         music.play();
         icon.src = "img/pause.svg"
-
       } else {
         music.pause();
         icon.src = "img/play.svg"
