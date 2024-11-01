@@ -1,3 +1,4 @@
+/* Estilo Original para Telas Maiores */
 * {
   padding: 0;
   margin: 0;
@@ -57,6 +58,7 @@ header nav ul a:hover {
   transform: scale(1.2);
   border-bottom: 3px solid blue;
 }
+
 .music-list {
   display: none;
   position: absolute;
@@ -67,7 +69,6 @@ header nav ul a:hover {
   z-index: 10;
   top: 100%;
   left: 66%;
-  position: absolute;
 }
 
 .music-list a {
@@ -82,6 +83,7 @@ header nav ul a:hover {
   background-color: blue;
   color: white;
 }
+
 .content {
   display: flex;
   flex-direction: column;
@@ -117,17 +119,18 @@ header nav ul a:hover {
   flex-direction: column;
   align-items: flex-start;
   margin-top: 80px;
-  margin-left: 300px;
+  margin-left: 70px !important;
   font-size: 24px;
   word-spacing: 3px;
   color: black;
   font-size: 50px;
   font-weight: 300;
-  transform: translate(-50%, -50%);
 }
+
 .subtitle {
   margin-top: 90px;
 }
+
 .play {
   display: flex;
   margin-top: 25px;
@@ -146,10 +149,95 @@ header nav ul a:hover {
 
 .right-col .play {
   transition: 0.3s ease;
-  max-width: 50px;
+  max-width: 100px; /* Aumentado para aumentar o ícone */
   cursor: pointer;
 }
 
 .right-col .play:hover {
   transform: scale(1.1);
+}
+
+/* Estilos Adaptados para Telas Menores */
+@media (max-width: 1024px) {
+  header {
+    padding: 1em 2em;
+  }
+
+  .logo img {
+    width: 200px;
+  }
+
+  header nav ul {
+    gap: 1.5em;
+  }
+
+  .left-col h1 {
+    font-size: 70px;
+  }
+
+  .right-col {
+    font-size: 40px;
+    margin-left: 200px;
+  }
+
+  .play {
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1em;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  header nav ul {
+    font-size: 14px;
+    gap: 1em;
+  }
+
+  .left-col {
+    align-items: center;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .left-col h1 {
+    font-size: 60px;
+  }
+
+  .right-col {
+    align-items: center;
+    font-size: 20px;
+    margin-left: 0;
+  }
+
+  .play {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav ul {
+    display: none;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .left-col h1 {
+    font-size: 40px;
+  }
+
+  .right-col {
+    font-size: 16px;
+  }
+
+  .play {
+    max-width: 40px; /* Aumentado para dispositivos pequenos */
+  }
 }
