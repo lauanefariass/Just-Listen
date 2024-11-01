@@ -47,7 +47,7 @@ header nav ul {
 }
 
 header nav ul a {
-  color: black;
+  color: blue;
   text-decoration: none;
   border-bottom: 3px solid transparent;
   transition: 0.3s ease;
@@ -57,7 +57,31 @@ header nav ul a:hover {
   transform: scale(1.2);
   border-bottom: 3px solid blue;
 }
+.music-list {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 10;
+  top: 100%;
+  left: 66%;
+  position: absolute;
+}
 
+.music-list a {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.music-list a:hover {
+  background-color: blue;
+  color: white;
+}
 .content {
   display: flex;
   flex-direction: column;
@@ -75,6 +99,7 @@ header nav ul a:hover {
 }
 
 .left-col h1 {
+  font-weight: 500;
   font-size: 80px;
   color: black;
   line-height: 1.1;
@@ -88,26 +113,25 @@ header nav ul a:hover {
 }
 
 .right-col {
-  margin-top: 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 80px;
+  margin-left: 300px;
   font-size: 24px;
-  color: blue;
-  font-weight: 600;
-  border: 2px solid blue;
-  border-radius: 32px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  word-spacing: 3px;
+  color: black;
+  font-size: 50px;
+  font-weight: 300;
   transform: translate(-50%, -50%);
 }
-
-.right-col img {
-  width: 24px;
-  height: 24px;
-  margin-left: 8px;
+.subtitle {
+  margin-top: 90px;
+}
+.play {
+  display: flex;
+  margin-top: 25px;
+  margin-left: 190px;
 }
 
 @keyframes bump {
@@ -128,86 +152,4 @@ header nav ul a:hover {
 
 .right-col .play:hover {
   transform: scale(1.1);
-}
-
-.MUSIC {
-  display: flex;
-  margin-left: 50px;
-}
-
-@media (max-width: 1200px) {
-  header {
-    padding: 1em 2em;
-  }
-
-  .left-col {
-    margin-left: 2em;
-  }
-
-  .left-col h1 {
-    font-size: 60px;
-  }
-
-  .right-col {
-    font-size: 20px;
-    padding: 10px 20px;
-  }
-}
-
-@media (max-width: 900px) {
-  header nav ul {
-    flex-direction: column;
-    gap: 1em;
-  }
-
-  .left-col {
-    margin-left: 1em;
-    margin-top: 30px;
-  }
-
-  .left-col h1 {
-    font-size: 50px;
-  }
-
-  .right-col {
-    font-size: 18px;
-    padding: 10px 15px;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    background: url(img/overview-hero-small.jpg) no-repeat center center fixed;
-    background-size: cover;
-  }
-
-  .logo {
-    font-size: 30px;
-  }
-
-  .left-col h1 {
-    font-size: 40px;
-  }
-
-  .right-col {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-
-  .left-col {
-    margin-left: 0;
-    align-items: center;
-    text-align: center;
-  }
-
-  .MUSIC {
-    margin-left: 0;
-    justify-content: center;
-  }
 }

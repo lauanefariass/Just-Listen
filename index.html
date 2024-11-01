@@ -4,11 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;900&display=swap" rel="stylesheet">
   <title>MUSIC</title>
   <link rel="stylesheet" href="./index.css">
 </head>
@@ -21,43 +19,88 @@
       </a>
       <nav>
         <ul>
-          <li> <a href="#">MUSICS</a></li>
-          <li> <a href="#">HITS</a></li>
-          <li> <a href="#">PODCASTS</a></li>
-          <li> <a href="#">NEW RELEASE</a></li>
-          <li> <a href="#">YOUR LIBRARY</a></li>
+          <li><a href="#" id="musicTab">MUSICS</a></li>
+          <li><a href="#">HITS</a></li>
+          <li><a href="#">PODCASTS</a></li>
+          <li><a href="#">NEW RELEASE</a></li>
+          <li><a href="#">YOUR LIBRARY</a></li>
         </ul>
       </nav>
+      <div class="music-list" id="musicList" style="display: none;">
+        <a href="#" onclick="playMusic('music')">Music 1</a>
+        <a href="#" onclick="playMusic('music2')">Music 2</a>
+        <a href="#" onclick="playMusic('music3')">Music 3</a>
+
+      </div>
     </header>
 
     <div class="left-col">
       <div style="display: flex; flex-direction: column;">
-
-        <h1>FEEL THE
-          <br><span class="MUSIC">MUSIC</span>
-        </h1>
+        <h1>FEEL THE <span>MUSIC</span></h1>
       </div>
       <div class="right-col">
-        <p>Try your dyson zone </p>
+        <p>Try your <span>Dyson zone</span></p>
         <img src="./img/PLAY_TRANSITION.gif" class="play" id="icon">
       </div>
     </div>
+
+    <audio id="music">
+      <source src="./music/music.mp3" type="audio/mp3">
+    </audio>
+    <audio id="music2">
+      <source src="./music/music2.mp3" type="audio/mp3">
+    </audio>
+    <audio id="music3">
+      <source src="./music/music3.mp3" type="audio/mp3">
+    </audio>
+
   </div>
-  <audio id="music">
-    <source src="./music/music.mp3" type="audio/mp3">
-  </audio>
 
   <script>
-    let music = document.getElementById("music")
-    let icon = document.getElementById("icon")
+    let musicElements = {
+      music: document.getElementById("music"),
+      music2: document.getElementById("music2"),
+      music3: document.getElementById("music3"),
+      music4: document.getElementById("music4"),
+      music5: document.getElementById("music5"),
+    };
+    let icon = document.getElementById("icon");
+    let musicList = document.getElementById("musicList");
+    let musicTab = document.getElementById("musicTab");
+    let currentlyPlaying = null;
+
+    musicTab.onclick = function (event) {
+      event.preventDefault();
+      if (musicList.style.display === "none" || musicList.style.display === "") {
+        musicList.style.display = "block";
+      } else {
+        musicList.style.display = "none";
+      }
+    };
+
+    function playMusic(selectedMusic) {
+
+      if (currentlyPlaying) {
+        currentlyPlaying.pause();
+        currentlyPlaying.currentTime = 0;
+      }
+
+
+      currentlyPlaying = musicElements[selectedMusic];
+      currentlyPlaying.play();
+      icon.src = "img/PLAYING_LOOP.gif";
+    }
+
 
     icon.onclick = function () {
-      if (music.paused) {
-        music.play();
-        icon.src = "img/PLAYING_LOOP.gif"
-      } else {
-        music.pause();
-        icon.src = "img/PLAYING_LOOP.gif"
+      if (currentlyPlaying) {
+        if (currentlyPlaying.paused) {
+          currentlyPlaying.play();
+          icon.src = "img/PLAYING_LOOP.gif";
+        } else {
+          currentlyPlaying.pause();
+          icon.src = "img/PLAY_TRANSITION.gif";
+        }
       }
     };
   </script>
